@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Unidades</title>
+    <link rel="stylesheet" href="styless.css">    
+</head>
+<body>
+    <div class="converter">
+        <h1>Cenversor de Unidades</h1>
+        <label for="valor">Digite o valor:</label>
+        <input type="number" id="valor" placeholder="Digite o valor" step="any">
+
+        <label for="categoria">Selecione a categoria:</label>
+        <select id="categoria" onchages="carregarUnidades()">
+            <option value="massa">Massa</option>
+            <option value="comprimento">Comprimento</option>
+            <option value="tempo">Tempo</option>
+            <option value="temperatura">Temperatura</option>
+            <option value="volume">Volume</option>
+            <option value="vazaoVolumetrica">Vazão Volumétrica</option>
+            <option value="pressao">Pressão</option>
+            <option value="viscosidadeAbsoluta">Viscosidade Absoluta</option>
+            <option value="viscosidadeCinematica">Viscosidade Cinemática</option>
+            <option value="massaEspecifica">Massa Específica</option>
+            <option value="potenciaFluxoTermico">Potência e Fluxo Térmico</option>
+        </select>
+
+        <label for="unidadeOrigem">Selecione a unidade de origem:</label>        
+        <select id="unidadeOrigem">
+            <option value="quilograma">Quilograma</option>
+            <option value="librametro">Librametro</option>
+            
+            <option value="metro">Metro</option>
+            <option value="polegada">Polegada</option>
+            <option value="pe">Pé</option>
+            
+            <option value="metroCubico">Metro Cúbico</option>
+            <option value="polegadaCubica">Polegada Cúbica</option>
+            <option value="peCubico">Pé Cúbico</option>
+            <option value="galao">Galão</option>
+            <option value="litro">Litro</option>
+            <option value="barril">Barril</option>
+
+            <option value="metroCubicoHora">Metro Cíbico por Hora</option>
+            <option value="peCubicoSegundo">Pés Cúbico por Segundo</option>
+            <option value="galaoMinuto">Galões por Minutos</option>
+            <option value="litroSegundo">Litros por Segundos</option>
+            <option value="barrilDia">Barril por Dia</option>
+
+            <option value="quilogramaCentimetroQuadrado">Quilograma por Centimetro Quadrado</option>
+            <option value="bar">Bar</option>
+            <option value="psi">Psi</option>
+            <option value="pascal">Pascal</option>
+            <option value="metroColunaDagua">Metro por Coluna D'Água</option>
+            <option value="milimetroHidrogenio">ilímetro de Hidrogêncio</option>
+
+            <option value="centiPoise">Centi Poise</option>
+            <option value="pascalSegundo">Pascal x Segundo</option>
+            <option value="librametroPesSegundo">Librametro por Pés x Segundo</option>
+            <option value="slugPesSegundo">Slug por Pés x Segundo</option>
+
+            <option value="centiStoke">Centi Stoke</option>
+            <option value="stoke">Stoke</option>
+            <option value="peQuadradoSegundo">Pé Quadrado por Segundo</option>
+
+            <option value="gramaCentimetroCubico">Grama por Centómetro Cíboco</option>
+            <option value="quilogramaMetroCubico">Quilograma por Metro Cúbico</option>
+            <option value="librametroPesCubico">Librametro por Pés Cúbicos</option>
+
+            <option value="hp">Horse Power</option>
+            <option value="cv">Cavalo Vapor</option>
+            <option value="trabalho">Trabalho</option>
+            <option value="librametroPesSegundo">Librametro x Pés por Segundos </option>
+            <option value="btuHora">Btu por Hora</option>
+            <option value="quiloCaloriasHora">Quilocalorias por Hora</option>
+        </select>
+        
+        <label for="unidadeDestino">Selecione a unidade de destino</label>
+        <select id="unidadeDestino">            
+            <option value="quilograma">Quilograma</option>
+            <option value="librametro">Librametro</option>
+            
+            <option value="metro">Metro</option>
+            <option value="polegada">Polegada</option>
+            <option value="pe">Pé</option>
+            
+            <option value="metroCubico">Metro Cúbico</option>
+            <option value="polegadaCubica">Polegada Cúbica</option>
+            <option value="peCubico">Pé Cúbico</option>
+            <option value="galao">Galão</option>
+            <option value="litro">Litro</option>
+            <option value="barril">Barril</option>
+    
+            <option value="metroCubicoHora">Metro Cíbico por Hora</option>
+            <option value="peCubicoSegundo">Pés Cúbico por Segundo</option>
+            <option value="galaoMinuto">Galões por Minutos</option>
+            <option value="litroSegundo">Litros por Segundos</option>
+            <option value="barrilDia">Barril por Dia</option>
+    
+            <option value="quilogramaCentimetroQuadrado">Quilograma por Centimetro Quadrado</option>
+            <option value="bar">Bar</option>
+            <option value="psi">Psi</option>
+            <option value="pascal">Pascal</option>
+            <option value="metroColunaDagua">Metro por Coluna D'Água</option>
+            <option value="milimetroHidrogenio">ilímetro de Hidrogêncio</option>
+    
+            <option value="centiPoise">Centi Poise</option>
+            <option value="pascalSegundo">Pascal x Segundo</option>
+            <option value="librametroPesSegundo">Librametro por Pés x Segundo</option>
+            <option value="slugPesSegundo">Slug por Pés x Segundo</option>
+    
+            <option value="centiStoke">Centi Stoke</option>
+            <option value="stoke">Stoke</option>
+            <option value="peQuadradoSegundo">Pé Quadrado por Segundo</option>
+    
+            <option value="gramaCentimetroCubico">Grama por Centómetro Cíboco</option>
+            <option value="quilogramaMetroCubico">Quilograma por Metro Cúbico</option>
+            <option value="librametroPesCubico">Librametro por Pés Cúbicos</option>
+    
+            <option value="hp">Horse Power</option>
+            <option value="cv">Cavalo Vapor</option>
+            <option value="trabalho">Trabalho</option>
+            <option value="librametroPesSegundo">Librametro x Pés por Segundos </option>
+            <option value="btuHora">Btu por Hora</option>
+            <option value="quiloCaloriasHora">Quilocalorias por Hora</option>
+        </select>
+        
+        <button onclick="converter()">Converter</button>
+        
+        <p id="resultado"></p>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
